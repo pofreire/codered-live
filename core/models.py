@@ -1,12 +1,11 @@
 from django.db import models
 from tinymce.models import HTMLField
-from django.conf import settings
 
 import datetime
 
 class Events(models.Model):
     titulo_evento = models.CharField(max_length=150)
-    imagem_evento = models.FileField(upload_to=settings.STATICFILES_DIRS, null=True, blank=True)
+    imagem_evento = models.FileField(upload_to='static/images/', null=True, blank=True)
     legenda_imagem_evento = models.CharField(max_length=150)
     descricao_evento = HTMLField()
     pre_requisitos_evento = HTMLField()
