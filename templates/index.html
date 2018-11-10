@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block titulo %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static "/css/bootstrap.min.css" %} ">
+        {% block style %}{% endblock %}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+            integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+            crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet">
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg " id="navegacao_barra">
+            <a class="navbar-brand" href="/"><span id="code_titulo">Code</span><span id="red_titulo">.RED</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url}}/bootcamps/">Bootcamps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url}}/codedojo/">CodeDojo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url}}/hackathon/">Hachathon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url}}/equipe/">Equipe</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    {% if request.user.is_authenticated %}
+                        <div class="dropdown">
+                            <a href="#" data-toggle="dropdown" id="usuario_login"> {{request.user}} </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{url}}/painel/">Painel</a>
+                                <a class="dropdown-item" href="{{url}}/sair/">Sair</a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" id="usuario_login" href="{{url}}/entrar/">Entrar</a>
+
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+
+        {% block home_header %}{% endblock %}
+        {% block events_header %}{% endblock %}
+
+        <div class="container">
+            {% block 404 %}{% endblock %}
+            {% block bootcamps %}{% endblock %}
+            {% block bootcampsartigo %}{% endblock %}
+            {% block code_dojo %}{% endblock %}
+            {% block equipe %}{% endblock %}
+            {% block entrar %}{% endblock %}
+            {% block registrar %}{% endblock %}
+            {% block hackathon %}{% endblock %}
+        </div>
+
+        <footer class="shadow-lg p-3 mb-5rounded container-fluid" id="primeiro_footer">
+            <div class="container" >
+                <div class="row" >
+                    <div class="col-sm-12 col-md-4 col-xl-4" id="descricao_cr_footer">
+                        <h3>CodeRED</h3>
+
+                        <p id=paragrafo>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Ut tempor rutrum quam, at porta sapien. Vestibulum at
+                            consequat leo, quis malesuada nibh. Cras vel justo eget
+                            orci ultrices finibus.</p>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-xl-4" id="noticia_footer">
+                        <h3>Noticias</h3>
+                        <p id=paragrafo>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Ut tempor rutrum quam, at porta sapien. Vestibulum at
+                            consequat leo, quis malesuada nibh. Cras vel justo eget
+                            orci ultrices finibus.</p>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-xl-4" id='contato_footer'>
+                        <a href="https://join.slack.com/t/code-redgroup/shared_invite/enQtNDQ1ODg3Mjg3NDI5LTZjYzk1YzJlNTU4OGU4YWM0MTdiNzQ5OThiMGY1ZGYzMzYxNWFhODQyYmZlZTY1MGU1OWViZWYzNWNhNWZlNmU"  target="_blank">
+                        <img src="{% static "/images/SLACK.png" %}" id='slack_img' alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <footer class="container-fluid" id="segundo_footer">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p id="paragrafo_footer">Code.RED Team &copy - 2018</p>
+                </div>
+            </div>
+        </footer>
+        <script src="{% static "/js/jquery-3.3.1.min.js" %}"></script>
+        <script src="{% static "/js/bootstrap.min.js" %}"></script>
+    </body>
+</html>

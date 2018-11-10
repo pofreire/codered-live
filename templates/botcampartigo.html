@@ -1,0 +1,80 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "/css/custom.css" %} ">
+{% endblock %}
+
+{% block bootcampsartigo %}
+
+        <img src="/{{bootcamp_artigo.bootcamp.imagem_evento}}" id="imagem_pagina_bootcamp" alt="">
+
+
+        <div class="container">
+
+            <div class="shadow-lg p-3 mb-5 rounded" id="prepare_box">
+                <h2>{{ bootcamp_artigo.bootcamp.titulo_evento}}</h2>
+                <br>
+                {{bootcamp_artigo.bootcamp.descricao_evento|safe}}
+            </div>
+
+            <div class="shadow-lg p-3 mb-5 rounded" id="professor_box">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-4 col-md-4 col-xl-4" id="professor_box">
+                        <img src="/{{bootcamp_artigo.professor.professor_foto}}" class="rounded-circle img-fluid" id="professor_img" alt="Instrutor">
+                        <h2>{{bootcamp_artigo.professor.nome_professor}}</h2>
+                        <h6>{{bootcamp_artigo.professor.titulo}}</h6>
+            <div id="bloco">
+                <img class="descricao_background" src="{% static "/images/lines.png" %}">
+                <img class="descricao_image descricao_image_collapse" src="{{bootcamp_artigo.bootcamp.imagem_evento}}" alt="Index octonaut">
+                <div class="descricao_box shadow-lg rounded" id="descricao_box_collapse">
+                    <h1>{{ bootcamp_artigo.bootcamp.titulo_evento}}</h1>
+                    {{bootcamp_artigo.curso.descricao_evento|safe}}
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="shadow-lg p-3 mb-5 rounded" id="professor_box">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-4 col-md-4 col-xl-4" id="professor_box">
+                        <img src="{{bootcamp_artigo.professor.professor_foto}}" class="rounded-circle img-fluid" id="professor_img" alt="Instrutor">
+                        <h6>Instrutor</h6>
+                        <a href="#"><i class="fab fa-twitter-square" id="professor_twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-square" id="professor_facebook"></i></a>
+                        <a href="#"><i class="fab fa-github-square" id="professor_github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin" id="professor_linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shadow-lg p-3 mb-5 rounded" id="prepare_box">
+                <h2>Programação</h2>
+                <br>
+                {{bootcamp_artigo.bootcamp.programacao_curso|safe}}
+             </div>
+             <div class="shadow-lg p-3 mb-5 rounded" id="prepare_box">
+                <h2>Pré-requisitos</h2>
+                <br>
+                {{bootcamp_artigo.bootcamp.pre_requisitos_evento|safe}}
+             </div>
+            <div class="shadow-lg p-3 mb-5 rounded" id="prepare_box">
+                <h2>Prepare-se</h2>
+                <br>
+                {{bootcamp_artigo.bootcamp.prepare_se_evento|safe}}
+            </div>
+            <div class="shadow-lg p-3 mb-5 rounded" id="dia_box">
+                <h2>Local</h2>
+                <br>
+                {{bootcamp_artigo.bootcamp.local_evento|safe}}
+                {{bootcamp_artigo.bootcamp.dia}}
+            </div>
+            {% if bootcamp_artigo.bootcamp.ativo %}
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-xl-12">
+                        <button type="button" class="btn btn-primary btn-lg btn-block" id="botao_inscrever_se">Inscrever-se</button>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+{% endblock %}

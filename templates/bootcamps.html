@@ -1,0 +1,42 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block titulo %}CodeRed - Bootcamps{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "/css/custom.css" %} ">
+{% endblock %}
+
+{% block bootcamps %}
+    {% for item in bootcamp_ativo %}
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-xl-6" id="bottcamp_destaque">
+                <img src="/{{item.bootcamp.imagem_evento}}" class="rounded img-fluid" alt="{{item.curso.legenda_imagem}}">
+            </div>
+            <div class="col-sm-6 col-md-6 col-xl-6" id="bottcamp_destaque">
+                <h1>{{ item.bootcamp.titulo_evento}}</h1>
+                <p>De {{item.bootcamp.data_inicial_evento}} ate {{item.bootcamp.data_final_evento}}</p>
+                <p>{{item.bootcamp.descricao_evento|safe}}</p>
+                Carga horária: {{item.bootcamp.carga_horaria_evento}} horas
+                <a href="{{url}}/bootcamps/{{item.artigo_id}}" class="btn btn-primary btn-lg btn-block"
+                role="button" id="botao_inscrever_se">Inscreva-se</a>
+            </div>
+
+        </div>
+    {% endfor %}
+
+    <div class="row" id="bootcamps_geral">
+        {% for item in bootcamps %}
+                <div class="col-sm-12 col-md-4 col-xl-4">
+                    <a href="{{url}}/bootcamps/{{item.artigo_id}}">
+                        <img src="/{{{item.bootcamp.imagem_evento}}" class="rounded img-fluid" id="bootcamp_imagem" alt="{{item.curso.legenda_imagem}}">
+                    </a>
+                    <div class="" id='bootcamp_texto'>
+                    <h1>{{item.bootcamp.titulo_evento}}</h1>
+                    <p>De {{item.bootcamp.data_inicial_evento}} ate {{item.bootcamp.data_final_evento}}</p>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

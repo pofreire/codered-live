@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block titulo %}CodeRed - Codedojo{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "/css/custom.css" %} ">
+{% endblock %}
+
+{% block code_dojo %}
+    {% for item in artigo_codedojo %}
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-xl-6" id="bottcamp_destaque">
+                <img src="/{{item.code_dojo.imagem_evento}}" class="rounded img-fluid" alt="{{item.code_dojo.legenda_imagem}}">
+            </div>
+            <div class="col-sm-6 col-md-6 col-xl-6" id="bottcamp_destaque">
+                <h1>{{item.code_dojo.titulo_code_dojo}}</h1>
+                <p>De {{item.code_dojo.data_inicial_code_dojo}} ate {{item.code_dojo.data_final_code_dojo}}</p>
+                <p>{{item.code_dojo.descrição_code_dojo|safe}}</p>
+                Carga horária: {{item.code_dojo.carga_horaria_code_dojo}} horas
+                <a href="{{url}}/bootcamps/{{item.curso_id}}" class="btn btn-primary btn-lg btn-block"
+                role="button" id="botao_inscrever_se">Inscreva-se</a>
+            </div>
+
+        </div>
+    {% endfor %}
+
+    <div class="row" id="bootcamps_geral">
+        {% for item in artigo_codedojo %}
+                <div class="col-sm-12 col-md-4 col-xl-4">
+                    <a href="{{url}}/codedojo/{{item.code_dojo_id}}">
+                        <img src="/{{item.code_dojo.code_dojo_foto}}" class="rounded img-fluid" id="bootcamp_imagem" alt="{{item.code_dojo.legenda_imagem}}">
+                    </a>
+                    <div class="" id='bootcamp_texto'>
+                    <h1>{{item.code_dojo.titulo_code_dojo}}</h1>
+                    <p>De {{item.code_dojo.data_inicial_code_dojo}} ate {{item.code_dojo.data_final_code_dojo}}</p>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+{% endblock %}

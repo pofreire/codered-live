@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block titulo %}CodeRed - Início {% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "/css/home_custom.css" %} ">
+{% endblock %}
+
+{% block home_header %}
+    <header class="v-header container">
+        <div class="fullscreen-video-wrap">
+            <video class="video" loop autoplay muted>
+                <source type="video/webm" src="{% static "/images/coding.webm" %}">
+                <source type="video/mp4" src="{% static "/images/coding.mp4" %}">
+            </video>
+        </div>
+        <div class="header-overlay"></div>
+        <div class="header-content text-md-center">
+            <h1>Bem vindo a CodeRED</h1>
+            <hr class="my-4 w-75">
+            <div class="">
+                <i class="fab fa-facebook-square" id="contato_facebook"></i>
+                <i class="fab fa-twitter-square" id="contato_twitter"></i>
+                <i class="fab fa-github-square" id="contato_github"></i>
+                <i class="fab fa-linkedin" id="contato_linkedin"></i>
+            </div>
+            <p>Somos uma comunidade empenhada em criar um ambiente saudável, instigante e divertido onde todos podem aprender a programar.</p>
+            <a href="{{url}}/equipe/" class="btn" role="button">Conheça</a>
+        </div>
+    </header>
+{% endblock %}
+
+{% block events_header %}
+    <div class="container">
+        <div class="eventos">
+            <div class="row">
+                <div class="col-md-4" id='bootcamp_main'>
+                    <a href="{{url}}/bootcamps">
+                        <img src="static/images/bootcamp.svg" class="img-fluid" id='bootcamp_imagem_main' alt="">
+                    </a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus nisi ac tellus pharetra pellentesque. In at odio turpis. Mauris vitae quam est. Etiam purus metus, aliquet vitae libero id, vulputate rhoncus arcu. Donec ac consequat tellus, vel suscipit neque. Pellentesque pharetra diam eu neque scelerisque egestas.</p>
+                </div>
+                <div class="col-md-4" id='codedojo_main'>
+                    <a href="{{url}}/codedojo">
+                        <img src="static/images/codedojo.svg" class="img-fluid" id='codedojo_imagem_main' alt="">
+                    </a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus nisi ac tellus pharetra pellentesque. In at odio turpis. Mauris vitae quam est. Etiam purus metus, aliquet vitae libero id, vulputate rhoncus arcu. Donec ac consequat tellus, vel suscipit neque. Pellentesque pharetra diam eu neque scelerisque egestas.</p>
+                </div>
+                <div class="col-md-4"id='hackathon_main'>
+                    <a href="{{url}}/hackathon">
+                        <img src="static/images/hachathon.svg" class="img-fluid" id='hackathon_imagem_main' alt="">
+                    </a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse dapibus nisi ac tellus pharetra pellentesque. In at odio turpis. Mauris vitae quam est. Etiam purus metus, aliquet vitae libero id, vulputate rhoncus arcu. Donec ac consequat tellus, vel suscipit neque. Pellentesque pharetra diam eu neque scelerisque egestas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

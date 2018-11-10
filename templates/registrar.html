@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block titulo %}CodeRed - Cadastro {% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "/css/custom.css" %} ">
+{% endblock %}
+
+{% block registrar %}
+
+    <div class="row">
+        <div id="registrar">
+            <h1>Registrar</h1>
+            <form action="/registrar/" method="post"> {% csrf_token %}
+                    {{form.as_p}}
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

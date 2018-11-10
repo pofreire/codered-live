@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block titulo %}CodeRed - 404{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "/css/custom.css" %} ">
+{% endblock %}
+
+{% block 404 %}
+    <h1>404 - Pajé nao encontrado </h1>
+    Come back to the main page.
+{% endblock %}

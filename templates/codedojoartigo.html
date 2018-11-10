@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "/css/custom.css" %} ">
+{% endblock %}
+
+{% block code_dojo %}
+
+        <div id="titulo_artigo">
+            <h1>{{artigo_codedojo_page.code_dojo.titulo_code_dojo}}</h1>
+        </div>
+
+        {% if artigo_codedojo_page.code_dojo.code_dojo_foto %}
+        <div class="col-sm-4">
+            <img src="/{{artigo_codedojo_page.code_dojo.code_dojo_foto}}" class="img-fluid" id="code_dojo_img" alt="Responsive image">
+        </div>
+        {% endif %}
+
+        <div class="shadow-lg p-3 mb-5 bg-white rounded" id="descricao_codedojo_box">
+            <h2>Descrição</h2>
+            {{artigo_codedojo_page.code_dojo.descrição_code_dojo|safe}}
+        </div>
+
+        <div class="shadow-lg p-3 mb-5 bg-white rounded" id="requisitos_codedojo_box">
+            <h2>Pré Requisitos</h2>
+            {{artigo_codedojo_page.code_dojo.pre_requisitos|safe}}
+        </div>
+
+        <div class="shadow-lg p-3 mb-5 bg-white rounded" id="prepare_box">
+            <h2>Prepare-se</h2>
+            {{artigo_codedojo_page.code_dojo.prepare_se|safe}}
+        </div>
+
+        <div class="shadow-lg p-3 mb-5 bg-white rounded" id="dia_box">
+            <h2>Local</h2>
+            {{artigo_codedojo_page.code_dojo.dia}}
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-primary btn-lg btn-block" id="botao_inscrever_se">Inscrever-se</button>
+            </div>
+        </div>
+
+{% endblock %}

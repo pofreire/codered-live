@@ -1,0 +1,48 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block titulo %}CodeRed - Equipe {% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "/css/custom.css" %} ">
+{% endblock %}
+
+{% block equipe %}
+    {% for item in descricao%}
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-xl-12" id="quemsomos_box">
+                <h1>Quem somos</h1>
+                <p>{{item.descricao_codered|safe}}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="row">
+        {% for item in integrante%}
+                <div class="col-sm-12 col-md-4 col-xl-4" id="equipe_box">
+                    <h1 id="integrante_nome">{{item.integrante_nome}}</h1>
+
+                    {% if item.integrante_foto %}
+
+                        <img src="/{{item.integrante_foto}}" class="rounded-circle img-fluid" id="equipe_imagem" alt="Responsive image">
+
+                    {% endif %}
+
+                    <h5>{{item.integrante_cargo}}</h5>
+
+                    {% if item.twitter %}
+                        <a href="{{item.twitter}}"><i class="fab fa-twitter-square" id="professor_twitter"></i></a>
+                    {% endif %}
+                    {% if item.facebook %}
+                        <a href="{{item.facebook}}"><i class="fab fa-facebook-square" id="professor_facebook"></i></a>
+                    {% endif %}
+                    {% if item.github %}
+                    <a href="{{item.github}}"><i class="fab fa-github-square" id="professor_github"></i></a>
+                    {% endif %}
+                    {% if item.linkedin %}
+                        <a href="{{item.linkedin}}"><i class="fab fa-linkedin" id="professor_linkedin"></i></a>
+                    {% endif %}
+                </div>
+        {% endfor %}
+    </div>
+{% endblock %}

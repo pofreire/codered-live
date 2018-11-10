@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block titulo %}CodeRed - Hackathon {% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "/css/custom.css" %} ">
+{% endblock %}
+
+{% block hackathon %}
+    {% for item in hackathon_artigo %}
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-xl-6" id="bottcamp_destaque">
+                <img src="/{{item.imagem_evento}}" class="rounded img-fluid" alt="">
+            </div>
+            <div class="col-sm-6 col-md-6 col-xl-6" id="bottcamp_destaque">
+                <h1>{{item.titulo_evento}}</h1>
+                <p>{{item.descricao_evento|safe}}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
