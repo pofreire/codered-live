@@ -47,17 +47,15 @@
                     {% else %}
                         <li class="nav-item">
                             <a class="nav-link" id="usuario_login" href="{{url}}/entrar/">Entrar</a>
-
                         </li>
                     {% endif %}
                 </ul>
             </div>
         </nav>
 
-        {% block home_header %}{% endblock %}
-        {% block events_header %}{% endblock %}
-
         <div class="container">
+            {% block home_header %}{% endblock %}
+            {% block events_header %}{% endblock %}
             {% block 404 %}{% endblock %}
             {% block bootcamps %}{% endblock %}
             {% block bootcampsartigo %}{% endblock %}
@@ -69,26 +67,36 @@
         </div>
 
         <footer class="shadow-lg p-3 mb-5rounded container-fluid" id="primeiro_footer">
-            <div class="container" >
+            <div class="container">
                 <div class="row" >
-                    <div class="col-sm-12 col-md-4 col-xl-4" id="descricao_cr_footer">
-                        <h3>CodeRED</h3>
-
-                        <p id=paragrafo>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Ut tempor rutrum quam, at porta sapien. Vestibulum at
-                            consequat leo, quis malesuada nibh. Cras vel justo eget
-                            orci ultrices finibus.</p>
+                    <div class="col-sm-12 col-md-4 col-xl-4" id="noticia_footer">
+                        <h4>Nossa Missão</h4>
+                        <hr>
+                        <p>A CodeRed promove eventos para a complementação
+                            e desenvolvimento das habilidades de estudantes
+                            e entusiastas da área de tecnologia.</p>
                     </div>
                     <div class="col-sm-12 col-md-4 col-xl-4" id="noticia_footer">
-                        <h3>Noticias</h3>
-                        <p id=paragrafo>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Ut tempor rutrum quam, at porta sapien. Vestibulum at
-                            consequat leo, quis malesuada nibh. Cras vel justo eget
-                            orci ultrices finibus.</p>
+                        <h4>Acessos</h4>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6 col-xl-6">
+                                <a class="nav-link" href="{{url}}/bootcamps/">Bootcamps</a>
+                                <a class="nav-link" href="{{url}}/codedojo/">CodeDojo</a>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-xl-6">
+                                <a class="nav-link" href="{{url}}/hackathon/">Hachathon</a>
+                                <a class="nav-link" href="{{url}}/equipe/">Equipe</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-12 col-md-4 col-xl-4" id='contato_footer'>
-                        <a href="https://join.slack.com/t/code-redgroup/shared_invite/enQtNDQ1ODg3Mjg3NDI5LTZjYzk1YzJlNTU4OGU4YWM0MTdiNzQ5OThiMGY1ZGYzMzYxNWFhODQyYmZlZTY1MGU1OWViZWYzNWNhNWZlNmU"  target="_blank">
-                        <img src="{% static "/images/SLACK.png" %}" id='slack_img' alt=""></a>
+
+                    <div class="col-sm-12 col-md-4 col-xl-4" id="noticia_footer">
+                        <h4>Contato</h4>
+                        <hr>
+                        <p><i class="fas fa-envelope"></i>  contato@codered.online</p>
+                        <p><i class="fas fa-map-marker-alt"></i>  Pres. Costa e Silva / Itaperuna - RJ.</p>
+                        <p><i class="fas fa-phone"></i>  (22) 3811-0111 </p>
                     </div>
                 </div>
             </div>
@@ -101,7 +109,9 @@
                 </div>
             </div>
         </footer>
+
         <script src="{% static "/js/jquery-3.3.1.min.js" %}"></script>
         <script src="{% static "/js/bootstrap.min.js" %}"></script>
+
     </body>
 </html>

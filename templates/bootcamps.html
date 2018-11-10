@@ -29,7 +29,7 @@
         {% for item in bootcamps %}
                 <div class="col-sm-12 col-md-4 col-xl-4">
                     <a href="{{url}}/bootcamps/{{item.artigo_id}}">
-                        <img src="/{{{item.bootcamp.imagem_evento}}" class="rounded img-fluid" id="bootcamp_imagem" alt="{{item.curso.legenda_imagem}}">
+                        <img src="/{{item.bootcamp.imagem_evento}}" class="rounded img-fluid" id="bootcamp_imagem" alt="{{item.curso.legenda_imagem}}">
                     </a>
                     <div class="" id='bootcamp_texto'>
                     <h1>{{item.bootcamp.titulo_evento}}</h1>

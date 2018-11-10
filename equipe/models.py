@@ -6,10 +6,10 @@ class Integrante_equipe(models.Model):
     integrante_nome = models.CharField(max_length=150)
     integrante_foto = models.FileField(upload_to='static/images', null=True, blank=True)
     integrante_cargo = models.CharField(max_length=150)
-    twitter = models.CharField(max_length=150)
-    facebook = models.CharField(max_length=150)
-    github = models.CharField(max_length=150)
-    linkedin = models.CharField(max_length=150)
+    twitter = models.CharField(max_length=150, blank=True)
+    facebook = models.CharField(max_length=150, blank=True)
+    github = models.CharField(max_length=150, blank=True)
+    linkedin = models.CharField(max_length=150, blank=True)
     ativo = models.BooleanField(default=False)
 
     class Meta:
