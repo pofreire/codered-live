@@ -1,4 +1,54 @@
 /* ------------GLOBAL---------------- */
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  min-height: 100%;
+}
+
+.content-inside {
+  padding: 20px;
+  padding-bottom: 50px;
+}
+
+.footer {
+  padding: 0px 0 5px 0;
+  background: #414c58;
+}
+
+.footer .container .row{
+  text-align: center;
+  padding-top: 10px;
+}
+
+.nav__footer{
+  width:100%;
+  height:20px;
+  text-align:center;
+}
+
+.navbar-nav li {
+  display: inline;
+}
+
+.navbar-nav li:hover{
+  color: #b83e23;
+}
+.navbar-nav li a:hover{
+  text-decoration: none;
+}
+
+.code__color{
+    color: #efeae1;
+}
+
+.red__color{
+  color: #b83e23;
+}
+
 body{
     background-color: #343233;
     color:#e6d2b3;
